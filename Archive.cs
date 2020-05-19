@@ -13,7 +13,7 @@ namespace assignment_club_
 {
     public partial class Archive : Form
     {
-        private connect_db conn2;
+        //private connect_db conn2;
         public Archive()
         {
             InitializeComponent();
@@ -21,14 +21,14 @@ namespace assignment_club_
 
         private void Archive_Load(object sender, EventArgs e)
         {
-            conn2 = new connect_db();
+            /*conn2 = new connect_db();
             lstarchive.Items.Clear();
             conn2.filldata("SELECT [club name] FROM Clubs WHERE [active status] = @n");
             conn2.da.SelectCommand.Parameters.AddWithValue("@n", "N");
             foreach (DataRow dr in conn2.dt.Rows)
             {
                 lstarchive.Items.Add(dr["club name"]);
-            }
+            }*/
         }
     }
 }

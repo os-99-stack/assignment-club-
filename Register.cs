@@ -12,14 +12,14 @@ namespace assignment_club_
 {
     public partial class Register : Form
     {
-        private connect_db conn1;
+        //private connect_db conn1;
         public Register()
         {
             InitializeComponent();
         }
         private void update(string text,int id)
         {
-            conn1.command("UPDATE Student SET Club Id =(SELECT Clubs.Club Id FROM Clubs WHERE club name = '"+ txtclubname +"')");
+            /*conn1.command("UPDATE Student SET Club Id =(SELECT Clubs.Club Id FROM Clubs WHERE club name = '"+ txtclubname +"')");
             conn1.cmd.Parameters.AddWithValue("@n", text);
             conn1.execute();
             conn1.command("SELECT student_Id From Student WHERE student_name = @n1");
@@ -30,12 +30,12 @@ namespace assignment_club_
             conn1.command("UPDATE user_role SET role Id = @rol WHERE user Id = @ui");
             conn1.cmd.Parameters.AddWithValue("@rol", id);
             conn1.cmd.Parameters.AddWithValue("@ui",studid);
-            conn1.execute();
+            conn1.execute();*/
         }
 
         private void btnregister_Click(object sender, EventArgs e)
         {
-            conn1 = new connect_db();
+            /*conn1 = new connect_db();
             conn1.command("SELECT * FROM Student WHERE student_name = @pres");
             conn1.cmd.Parameters.AddWithValue("@pres",txtpresident.Text);
             conn1.execute();
@@ -88,7 +88,7 @@ namespace assignment_club_
             else
             {
                 MessageBox.Show("stated student for president does not exist", "pres fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
 
            
 

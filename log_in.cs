@@ -13,7 +13,6 @@ namespace assignment_club_
 {
     public partial class log_in : Form
     {
-        private connect_db conn;
         public log_in()
         {
             InitializeComponent();
@@ -21,19 +20,15 @@ namespace assignment_club_
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            conn = new connect_db();
-            conn.command("SELECT * FROM users WHERE username=@un AND password=@pwd");
+            controller ctrl = new controller();
+            (bool status, int roleid) = ctrl.signin(txtusername.Text,txtpwd.Text);
 
-            conn.cmd.Parameters.AddWithValue("@un",txtusername.Text);
-            conn.cmd.Parameters.AddWithValue("@pwd", txtpwd.Text);
-            conn.execute();
-
-            if (conn.dr.HasRows)
+            if (status == true)
             {
                 
                 MessageBox.Show("Login successful", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
-                Home h = new Home();
+                Home h = new Home(roleid);
                 h.Show();
                 
             }
@@ -41,9 +36,6 @@ namespace assignment_club_
             {
                 MessageBox.Show("incorrect username or password", "fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            conn.dr.Close();
-            conn.close();
         }
     }
 }

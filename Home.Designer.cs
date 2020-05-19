@@ -108,7 +108,7 @@
             this.btnweekly.Name = "btnweekly";
             this.btnweekly.Size = new System.Drawing.Size(200, 38);
             this.btnweekly.TabIndex = 5;
-            this.btnweekly.Text = "Weekly Activities";
+            this.btnweekly.Text = "Weekly Activity update";
             this.btnweekly.UseVisualStyleBackColor = false;
             this.btnweekly.Click += new System.EventHandler(this.btnweekly_Click);
             // 
@@ -138,7 +138,7 @@
             this.btnviewform.Name = "btnviewform";
             this.btnviewform.Size = new System.Drawing.Size(200, 38);
             this.btnviewform.TabIndex = 3;
-            this.btnviewform.Text = "View Club";
+            this.btnviewform.Text = "View Club Details";
             this.btnviewform.UseVisualStyleBackColor = false;
             this.btnviewform.Click += new System.EventHandler(this.btnviewform_Click);
             // 
@@ -247,6 +247,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Home";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Home_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

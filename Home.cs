@@ -12,9 +12,11 @@ namespace assignment_club_
 {
     public partial class Home : Form
     {
-        public Home()
+        int roleid;
+        public Home(int roleid)
         {
             InitializeComponent();
+            this.roleid = roleid;
         }
 
         private void openform(Form smallform)
@@ -57,6 +59,25 @@ namespace assignment_club_
         private void btnreportform_Click(object sender, EventArgs e)
         {
             openform(new Report());
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            if(roleid == 5)
+            {
+                btnregform.Visible = false;
+                btnarcform.Visible = false;
+                btnupdateclub.Visible = false;
+                btnreportform.Visible = false;
+                btnweekly.Visible = false;
+            }
+            else if(roleid == 4)
+            {
+                btnregform.Visible = false;
+                btnarcform.Visible = false;
+                btnupdateclub.Visible = false;
+                btnreportform.Visible = false;
+            }
         }
     }
 }

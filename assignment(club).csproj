@@ -58,8 +58,7 @@
     <Compile Include="ClubDetails.Designer.cs">
       <DependentUpon>ClubDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="connect_db.cs" />
-    <Compile Include="Globalvar.cs" />
+    <Compile Include="controller.cs" />
     <Compile Include="Report.cs">
       <SubType>Form</SubType>
     </Compile>
